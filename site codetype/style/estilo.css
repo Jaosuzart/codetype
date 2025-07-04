@@ -290,18 +290,18 @@ section {
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 0.1em;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-top: 0.1em;
+  padding-bottom: 0.1em;
 }
 
 .hero__title--upper {
   text-transform: uppercase;
-  margin-top: 0.5rem;
+  margin-top: 1px;
   display: block;
   color: #1d0738;
-  text-shadow: 2px 2px #fff, -2px -2px #fff, -2px 2px #fff, 2px -2px #fff;
+  text-shadow: 2px 1px #fff, -0.2px -1px #fff, -1px 2px #fff, 1px -2px #fff;
   letter-spacing: 1px;
 }
 

@@ -10,6 +10,7 @@
   --h3-size: 1.25rem;
 }
 
+/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -43,6 +44,7 @@ img {
   white-space: nowrap;
 }
 
+/* ---------- Cabeçalho Unificado ---------- */
 .header {
   position: sticky;
   top: 0;
@@ -57,8 +59,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 1.5rem;
   position: relative;
 }
 
@@ -73,6 +74,7 @@ img {
   border: 2px solid var(--primary-color);
 }
 
+/* Botão hambúrguer */
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -127,6 +129,7 @@ img {
   pointer-events: auto;
 }
 
+/* ---------- Navegação / Menu Mobile ---------- */
 .nav-menu {
   position: fixed;
   top: 0;
@@ -235,6 +238,7 @@ img {
   padding: 1rem;
 }
 
+/* Tipografia */
 h1,
 .h1 {
   font-size: var(--h1-size);
@@ -266,6 +270,7 @@ p {
   display: block;
 }
 
+/* Seções Principais */
 main *::-webkit-scrollbar {
   height: 0.25rem;
 }
@@ -280,6 +285,7 @@ section {
   padding: 0.5em;
 }
 
+/* Hero Section */
 .hero {
   text-align: center;
   display: flex;
@@ -297,6 +303,13 @@ section {
   color: #1d0738;
   text-shadow: 2px 1px #fff, -0.2px -1px #fff, -1px 2px #fff, 1px -2px #fff;
   letter-spacing: 1px;
+}
+
+/* Cursos */
+.courses__title {
+  /* Added/Modified lines for centering the title */
+  text-align: center;
+  margin-bottom: 2rem; /* Adjusted for better spacing */
 }
 
 .courses__list {
@@ -318,6 +331,7 @@ section {
   margin-top: 1.5rem;
 }
 
+/* Testimonials Carousel */
 .testimonials__carousel {
   position: relative;
   overflow: hidden;
@@ -411,16 +425,18 @@ section {
   width: 100%;
   max-width: 320px;
 }
+
+/* ESTILOS CORRIGIDOS PARA A SEÇÃO DE NOVIDADES */
 .news {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem;
+  gap: 1.5rem; /* Espaçamento entre o texto, os apps e o botão */
 }
 
 .news__header .h2 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem; /* Ajusta o espaço abaixo do título */
 }
 
 .news__disclaimer {
@@ -444,7 +460,9 @@ section {
 .news__icon:hover img {
   transform: scale(1.1);
 }
+/* FIM DA CORREÇÃO */
 
+/* ---------- Footer ---------- */
 .footer {
   background: var(--menu-bg);
   padding: 2.5rem 1.5rem;
@@ -455,13 +473,14 @@ section {
 .footer__container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
   gap: 1.5rem;
 }
 
 .footer__logo {
   width: 5rem;
+  text-align: center;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
 }
@@ -491,6 +510,7 @@ section {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* ---------- ESTILOS PARA DESKTOP ---------- */
 @media (min-width: 1024px) {
   :root {
     --h1-size: 3.25rem;
@@ -503,18 +523,20 @@ section {
     margin-inline: auto;
   }
 
+  /* Esconde o botão hambúrguer no desktop */
   .mobile-menu-toggle {
     display: none;
   }
 
   .header__container {
-    padding: 0.5rem 0;
+    padding: 0.5rem 2rem;
   }
 
   .header__logo {
     width: 6rem;
   }
 
+  /* Transforma o menu em uma barra de navegação horizontal */
   .nav-menu {
     position: static;
     width: auto;
@@ -534,6 +556,7 @@ section {
     padding: 0;
   }
 
+  /* ESTILO DOS ÍCONES NO DESKTOP */
   .nav-menu a {
     padding: 0.75rem;
     border-radius: 50%;
@@ -547,6 +570,7 @@ section {
     width: auto;
   }
 
+  /* Esconde o texto do menu no desktop */
   .nav-menu a span {
     display: none;
   }
@@ -566,10 +590,10 @@ section {
     gap: 2rem;
   }
 
+  /* Estilos do Footer para Desktop */
   .footer__container {
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     text-align: left;
   }
 }

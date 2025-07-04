@@ -339,7 +339,7 @@ section {
 }
 .testimonial-item {
   flex: 0 0 100%;
-  padding: 1rem;
+  padding: 4em;
   box-sizing: border-box;
   text-align: center;
   color: var(--text-color);

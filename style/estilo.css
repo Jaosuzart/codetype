@@ -1,4 +1,3 @@
-/* Variáveis */
 :root {
   --page-bg: #0b090d;
   --text-color: #ffffff;
@@ -10,7 +9,6 @@
   --h3-size: 1.25rem;
 }
 
-/* Reset básico */
 * {
   margin: 0;
   padding: 0;
@@ -44,7 +42,6 @@ img {
   white-space: nowrap;
 }
 
-/* ---------- Cabeçalho Unificado ---------- */
 .header {
   position: sticky;
   top: 0;
@@ -57,17 +54,16 @@ img {
 
 .header__container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: 1rem 1.5rem;
   position: relative;
 }
 
 .header__logo {
   width: 4.75rem;
-  z-index: 101;
-  margin-bottom: 0.5rem;
+  z-index: 50;
 }
 
 .header__logo img {
@@ -76,11 +72,17 @@ img {
   border: 2px solid var(--primary-color);
 }
 
-/* Botão hambúrguer */
+@media (max-width: 1023px) {
+  .header__logo {
+    display: none;
+  }
+}
+
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
   width: 2rem;
   height: 1.5rem;
   background: transparent;
@@ -99,7 +101,6 @@ img {
     opacity var(--transition-speed) ease;
 }
 
-/* Animação X */
 .mobile-menu-toggle.active .hamburger-line:first-child {
   transform: translateY(0.55rem) rotate(45deg);
 }
@@ -110,7 +111,6 @@ img {
   transform: translateY(-0.55rem) rotate(-45deg);
 }
 
-/* Overlay para fechar clicando fora */
 .menu-overlay {
   position: fixed;
   top: 0;
@@ -118,20 +118,17 @@ img {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 98;
   opacity: 0;
   visibility: hidden;
   transition: opacity var(--transition-speed) ease;
   pointer-events: none;
 }
-
 .menu-overlay.active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-/* ---------- Navegação / Menu Mobile ---------- */
 .nav-menu {
   position: fixed;
   top: 0;
@@ -140,16 +137,70 @@ img {
   max-width: 320px;
   height: 100vh;
   background: var(--menu-bg);
-  padding-top: 6rem;
   transform: translateX(-100%);
   transition: transform var(--transition-speed) cubic-bezier(0.23, 1, 0.32, 1);
-  z-index: 99;
   box-shadow: 3px 0 15px rgba(0, 0, 0, 0.3);
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 0;
 }
-
 .nav-menu.active {
   transform: translateX(0);
+}
+
+.nav-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem 1rem 2rem;
+  background: transparent;
+  position: relative;
+}
+
+.nav-menu__logo-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--primary-color);
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.nav-menu__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* Botão de fechar SEM círculo */
+.nav-menu__close-overlay {
+  position: absolute;
+  top: 50%;
+  right: 0px;
+  transform: translate(0, -50%);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.7rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 2;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+  margin: 0;
+}
+
+.nav-menu__close-overlay:hover {
+  background-color: transparent;
+  transform: translate(0, -50%) scale(1.1);
 }
 
 .nav-menu ul {
@@ -158,6 +209,7 @@ img {
   flex-direction: column;
   gap: 1.5rem;
   padding: 2rem;
+  margin-top: 0;
 }
 
 .nav-menu a {
@@ -202,7 +254,6 @@ img {
   transform: scaleY(1);
 }
 
-/* Botões */
 .btn {
   display: inline-block;
   background: var(--primary-color);
@@ -240,13 +291,13 @@ img {
   padding: 1rem;
 }
 
-/* Tipografia */
 h1,
 .h1 {
   font-size: var(--h1-size);
   font-weight: 700;
   line-height: 1.1;
 }
+
 h2,
 .h2 {
   font-size: var(--h2-size);
@@ -254,12 +305,14 @@ h2,
   text-align: center;
   margin-bottom: 1.5rem;
 }
+
 h3,
 .h3 {
   font-size: var(--h3-size);
   font-weight: 500;
   text-align: center;
 }
+
 p {
   font-size: 0.875rem;
   line-height: 1em;
@@ -272,13 +325,14 @@ p {
   display: block;
 }
 
-/* Seções Principais */
 main *::-webkit-scrollbar {
   height: 0.25rem;
 }
+
 main *::-webkit-scrollbar-track {
   background: transparent;
 }
+
 main *::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
 }
@@ -287,7 +341,6 @@ section {
   padding: 0.5em;
 }
 
-/* Hero Section */
 .hero {
   text-align: center;
   display: flex;
@@ -307,11 +360,9 @@ section {
   letter-spacing: 1px;
 }
 
-/* Cursos */
 .courses__title {
-  /* Added/Modified lines for centering the title */
   text-align: center;
-  margin-bottom: 2rem; /* Adjusted for better spacing */
+  margin-bottom: 2rem;
 }
 
 .courses__list {
@@ -333,18 +384,19 @@ section {
   margin-top: 1.5rem;
 }
 
-/* Testimonials Carousel */
 .testimonials__carousel {
   position: relative;
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
 }
+
 .testimonials__carousel__wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
+
 .testimonial-item {
   flex: 0 0 100%;
   padding: 4em;
@@ -352,12 +404,14 @@ section {
   text-align: center;
   color: var(--text-color);
 }
+
 .testimonial-item img {
   max-width: 120px;
   border-radius: 50%;
   margin: 0 auto 1rem;
   border: 3px solid var(--primary-color);
 }
+
 .carousel__btn {
   position: absolute;
   top: 50%;
@@ -371,18 +425,22 @@ section {
   border-radius: 50%;
   z-index: 10;
 }
+
 .carousel__btn--prev {
   left: 0.5rem;
 }
+
 .carousel__btn--next {
   right: 0.5rem;
 }
+
 .carousel-indicators {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
   gap: 10px;
 }
+
 .carousel-indicators button {
   width: 12px;
   height: 12px;
@@ -391,11 +449,11 @@ section {
   border: none;
   cursor: pointer;
 }
+
 .carousel-indicators button[aria-selected="true"] {
   background: var(--primary-color);
 }
 
-/* E-book */
 .books__card {
   display: flex;
   flex-direction: column;
@@ -428,17 +486,16 @@ section {
   max-width: 320px;
 }
 
-/* ESTILOS CORRIGIDOS PARA A SEÇÃO DE NOVIDADES */
 .news {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.5rem; /* Espaçamento entre o texto, os apps e o botão */
+  gap: 1.5rem;
 }
 
 .news__header .h2 {
-  margin-bottom: 0.5rem; /* Ajusta o espaço abaixo do título */
+  margin-bottom: 0.5rem;
 }
 
 .news__disclaimer {
@@ -462,9 +519,7 @@ section {
 .news__icon:hover img {
   transform: scale(1.1);
 }
-/* FIM DA CORREÇÃO */
 
-/* ---------- Footer ---------- */
 .footer {
   background: var(--menu-bg);
   padding: 2.5rem 1.5rem;
@@ -513,24 +568,16 @@ section {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* ---------- ESTILOS PARA DESKTOP ---------- */
 @media (min-width: 1024px) {
   :root {
     --h1-size: 3.25rem;
     --h2-size: 2.25rem;
     --h3-size: 1.75rem;
   }
-
   .container {
     max-width: 1200px;
     margin-inline: auto;
   }
-
-  /* Esconde o botão hambúrguer no desktop */
-  .mobile-menu-toggle {
-    display: none;
-  }
-
   .header__container {
     flex-direction: column;
     align-items: center;
@@ -540,66 +587,45 @@ section {
     margin-inline: auto;
     width: 100%;
   }
-
   .header__logo {
+    display: block;
     width: 6rem;
   }
-
-  /* Transforma o menu em uma barra de navegação horizontal */
+  .nav-menu__close-overlay {
+    display: none;
+  }
+  .mobile-menu-toggle {
+    display: none;
+  }
   .nav-menu {
+    transform: translateX(0) !important;
+    display: flex;
     position: static;
+    height: auto;
     width: auto;
     max-width: none;
-    height: auto;
+    box-shadow: none;
     background: transparent;
     padding-top: 0;
-    transform: none;
-    box-shadow: none;
-    overflow-y: visible;
   }
-
+  .nav-menu__header {
+    display: none;
+  }
   .nav-menu ul {
     flex-direction: row;
     justify-content: center;
     gap: 1rem;
     padding: 0;
+    margin-top: 0;
   }
-
-  /* ESTILO DOS ÍCONES NO DESKTOP */
-  .nav-menu a {
-    padding: 0.75rem;
-    border-radius: 50%;
-    background-color: transparent;
-    line-height: 1;
+  .menu-overlay {
+    display: none !important;
   }
-
-  .nav-menu a i {
-    font-size: 1.5rem;
-    margin: 0;
-    width: auto;
-  }
-
-  /* Esconde o texto do menu no desktop */
-  .nav-menu a span {
-    display: none;
-  }
-
-  .nav-menu a::before {
-    display: none;
-  }
-
-  .nav-menu a:hover,
-  .nav-menu a:focus {
-    background-color: rgba(238, 50, 49, 0.2);
-  }
-
   .books__card {
     flex-direction: row;
     align-items: center;
     gap: 2rem;
   }
-
-  /* Estilos do Footer para Desktop */
   .footer__container {
     flex-direction: column;
     align-items: center;

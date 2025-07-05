@@ -8,61 +8,57 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
-
     <link rel="stylesheet" href="normalize/normalize.css" />
     <link rel="stylesheet" href="style/estilo.css" />
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body class="no-js">
-
+<body>
     <header class="header" role="banner">
-        <div class="header__container">
+        <div class="header__container container">
             <div class="header__logo">
                 <img src="images/programador.jpg" alt="Codetype Logotipo" />
             </div>
-
             <button class="mobile-menu-toggle" id="menu-toggle" aria-label="Abrir menu" aria-expanded="false"
                 aria-controls="nav-menu">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
             </button>
-
             <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Menu principal">
+                <div class="nav-menu__header">
+                    <div class="nav-menu__logo-container">
+                        <img src="images/programador.jpg" alt="Codetype Logotipo" class="nav-menu__logo" />
+                    </div>
+                </div>
                 <ul>
+                    <li><a href="#home"><i class="fa-solid fa-house"></i> <span>Home do site</span></a></li>
                     <li><a href="#courses"><i class="fas fa-laptop-code"></i> <span>Cursos Codetype</span></a></li>
                     <li><a href="#ebooks"><i class="fas fa-book-open"></i> <span>E-book da Serliv</span></a></li>
                     <li><a href="#channels"><i class="fas fa-broadcast-tower"></i> <span>Canais</span></a></li>
                     <li><a href="#socialmedia"><i class="fas fa-envelope"></i> <span>Contatos</span></a></li>
-                    <li><a href="#home"><i class="fa-solid fa-house"></i><span>Home</span></a></li>
                 </ul>
             </nav>
         </div>
     </header>
-
     <div class="menu-overlay" id="menu-overlay"></div>
-
     <main>
-        <section class="hero">
+        <section class="hero" id="home">
             <div class="container">
                 <h1 class="hero__title">
                     O Melhor Lugar para iniciar sua jornada na
-                    <span class="hero__title--upper">Programação <span class="no-wrap">Front-end e
-                            Back-end</span></span>
+                    <span class="hero__title--upper">
+                        Programação <span class="no-wrap">Front-end e Back-end</span>
+                    </span>
                 </h1>
                 <a href="#courses" class="btn hero__cta">Conheça nossos cursos</a>
             </div>
         </section>
-
         <section class="courses container" id="courses">
             <div class="courses__title">
                 <h2 class="h2">Os Melhores Cursos <span class="title--thin">Você Encontra Aqui</span></h2>
             </div>
-
             <div class="courses__carousel" data-carousel>
                 <div class="courses__list" data-carousel-wrapper>
                     <article class="courses__card" data-carousel-item>
@@ -71,30 +67,26 @@
                             </h3>
                             <p>Crie seus sites com Node.js e aprenda na prática HTML, CSS e JavaScript.</p>
                             <img src="images/node.png" alt="Capa curso Node.js" class="courses__card__img" />
-
                             <div class="courses__card__ctas">
                                 <a href="#" class="btn btn--stroke">Ver Conteúdo</a>
                                 <a href="#" class="btn">Quero Comprar</a>
                             </div>
                         </div>
                     </article>
-
                     <article class="courses__card" data-carousel-item>
                         <div class="courses__card__content">
-                            <h3 class="h3">PHP <span class="title--thin">Do básico ao avançado</span></h3>
+                            <h3 class="h3">Curso de PHP <span class="title--thin">Do básico ao avançado</span></h3>
                             <p>Aprenda PHP com exemplos práticos.</p>
                             <img src="images/php.jpeg" alt="Capa curso PHP" class="courses__card__img" />
-
                             <div class="courses__card__ctas">
                                 <a href="#" class="btn btn--stroke">Ver Conteúdo</a>
                                 <a href="#" class="btn">Quero Comprar</a>
                             </div>
                         </div>
                     </article>
-
                     <article class="courses__card" data-carousel-item>
                         <div class="courses__card__content">
-                            <h3 class="h3">C e C#<span class="title--thin">com método diferenciado</span></h3>
+                            <h3 class="h3">Curso de C e C#<span class="title--thin">com método diferenciado</span></h3>
                             <p>Aprenda o que a faculdade não ensina.</p>
                             <img src="images/c.jpeg" alt="Capa curso C" class="courses__card__img" />
                             <div class="courses__card__ctas">
@@ -106,32 +98,27 @@
                 </div>
             </div>
         </section>
-
         <section class="testimonials container" aria-label="Depoimentos">
             <h2 class="h2">Alguns Depoimentos <span class="title--thin">O que andam falando da gente por aí</span></h2>
-
             <div class="testimonials__carousel" id="testimonial-carousel">
                 <button class="carousel__btn carousel__btn--prev" aria-label="Depoimento anterior">&#10094;</button>
-
                 <div class="testimonials__carousel__wrapper" data-carousel-wrapper>
                     <article class="testimonial-item" data-carousel-item>
                         <img src="images/depoimentos-curso-matheus-fraga-fabrica-de-apps.png"
                             alt="Depoimento 01 - Curso bastante didático" />
-                        <blockquote>Curso extremamente didático"-Matheus Fraga </blockquote>
+                        <blockquote>"Curso extremamente didático"-Matheus Fraga </blockquote>
                     </article>
                     <article class="testimonial-item" data-carousel-item>
                         <img src="images/depoimentos.jpeg"
                             alt="Depoimento 02 - Simplesmente o melhor curso de fundamentos" />
                         <blockquote>"Simplesmente o melhor curso de fundamentos"-Ana Silva </blockquote>
                     </article>
-
                     <article class="testimonial-item" data-carousel-item>
                         <img src="images/depoimentos-curso-matheus-fraga-fabrica-de-apps.png"
                             alt="Depoimento 03 - Aprendi muito rápido" />
                         <blockquote>"Aprendi muito rápido"-Ana Silva</blockquote>
                     </article>
                 </div>
-
                 <button class="carousel__btn carousel__btn--next" aria-label="Próximo depoimento">&#10095;</button>
                 <div class="carousel-indicators" role="tablist" aria-label="Indicadores de depoimentos">
                     <button role="tab" aria-selected="true" aria-controls="testimonial-0" id="indicator-0"
@@ -143,7 +130,6 @@
                 </div>
             </div>
         </section>
-
         <section class="books container" id="ebooks">
             <h2 class="h2">E-book da serliv como afiliado <span class="title--thin"> Livros digitais para você se
                     especializar ainda mais</span></h2>
@@ -172,15 +158,12 @@
                 </article>
             </div>
         </section>
-
         <section class="news container" id="channels">
             <div class="news__header">
                 <h2 class="h2">Não perca as Novidades da codetype <span class="title--thin">Atualizações, Promoções,
-                        Links
-                        Interessantes, Vídeos novos no canal. Saiba tudo em primeira mão.</span></h2>
+                        Links Interessantes, Vídeos novos no canal. Saiba tudo em primeira mão.</span></h2>
                 <p class="news__disclaimer">Escolha seu app preferido</p>
             </div>
-
             <div class="news__apps-carousel" data-carousel>
                 <div class="news__apps-group" data-carousel-wrapper>
                     <a href="#" class="news__icon" data-carousel-item><img src="images/whatsapp.svg"
@@ -189,19 +172,15 @@
                             alt="Telegram logo" /></a>
                 </div>
             </div>
-
             <div class="news__saiba-mais-wrap">
                 <a href="#" class="btn">Saiba mais</a>
             </div>
         </section>
     </main>
-
     <footer class="footer" id="socialmedia">
         <div class="container footer__container">
             <img src="images/programador.jpg" alt="programador logotipo" class="footer__logo" />
-
             <p class="footer__contact-text">Entre em contato conosco através de nossas redes sociais</p>
-
             <ul class="footer__socialLinks">
                 <li><a href="#" aria-label="LinkedIn"><img src="images/mdi_linkedin.svg" alt="LinkedIn" /></a></li>
                 <li><a href="#" aria-label="YouTube"><img src="images/mdi_youtube.svg" alt="YouTube" /></a></li>
@@ -209,13 +188,46 @@
             </ul>
         </div>
         <div class="footer__copyright">
-            <p>© 2025 Codetype. Todos os direitos reservados.</p>
+            <p>© 2025 Codetype. Todos os direitos reservados, por João Marcelo, desenvolvedor front-end e futuro
+                full-stack.</p>
         </div>
     </footer>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-    <script src="script/menu.js"></script>
-    <script src="script/carousel.js"></script>
+        function openMenu() {
+            menuToggle.classList.add('active');
+            navMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            menuToggle.setAttribute('aria-expanded', 'true');
+        }
 
+        function closeMenu() {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+        }
+
+        menuToggle.addEventListener('click', openMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth < 1024) {
+                    closeMenu();
+                }
+            });
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                closeMenu();
+            }
+        });
+    </script>
 </body>
 
 </html>

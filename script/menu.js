@@ -10,9 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isActive = navMenu.classList.toggle("active");
     menuToggle.classList.toggle("active", isActive);
     menuOverlay.classList.toggle("active", isActive);
-    // Aria expand/collapse
     menuToggle.setAttribute("aria-expanded", isActive);
-    document.body.style.overflow = isActive ? "hidden" : "auto";
   }
 
   // Abrir/fechar menu clicando no hambúrguer

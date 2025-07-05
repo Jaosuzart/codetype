@@ -8,13 +8,11 @@
   --h2-size: 1.5rem;
   --h3-size: 1.25rem;
 }
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: "Inter", sans-serif;
   background: var(--page-bg);
@@ -22,26 +20,21 @@ body {
   overflow-x: hidden;
   line-height: 1.6;
 }
-
 a {
   text-decoration: none;
   color: inherit;
 }
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
 .container {
   margin-inline: 1.5rem;
 }
-
 .no-wrap {
   white-space: nowrap;
 }
-
 .header {
   position: sticky;
   top: 0;
@@ -51,7 +44,6 @@ img {
   z-index: 100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
 }
-
 .header__container {
   display: flex;
   flex-direction: row;
@@ -60,24 +52,20 @@ img {
   padding: 1rem 1.5rem;
   position: relative;
 }
-
 .header__logo {
   width: 4.75rem;
   z-index: 50;
 }
-
 .header__logo img {
   width: 100%;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
 }
-
 @media (max-width: 1023px) {
   .header__logo {
     display: none;
   }
 }
-
 .mobile-menu-toggle {
   display: flex;
   flex-direction: column;
@@ -91,7 +79,6 @@ img {
   z-index: 101;
   padding: 0;
 }
-
 .hamburger-line {
   width: 100%;
   height: 0.25rem;
@@ -100,7 +87,6 @@ img {
   transition: transform var(--transition-speed) ease,
     opacity var(--transition-speed) ease;
 }
-
 .mobile-menu-toggle.active .hamburger-line:first-child {
   transform: translateY(0.55rem) rotate(45deg);
 }
@@ -125,11 +111,11 @@ img {
   display: flex;
   flex-direction: column;
   padding-top: 0;
+  z-index: 200;
 }
 .nav-menu.active {
   transform: translateX(0);
 }
-
 .nav-menu__header {
   display: flex;
   align-items: center;
@@ -138,7 +124,6 @@ img {
   background: transparent;
   position: relative;
 }
-
 .nav-menu__logo-container {
   position: relative;
   width: 80px;
@@ -148,41 +133,35 @@ img {
   margin: 0 auto;
   overflow: hidden;
 }
-
 .nav-menu__logo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   border-radius: 50%;
 }
-
 .nav-menu__close-overlay {
   position: absolute;
-  top: 50%;
-  right: 0px;
-  transform: translate(0, -50%);
+  top: 18px;
+  left: 18px;
   background: transparent;
   border: none;
-  border-radius: 0;
-  width: 28px;
-  height: 28px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  font-size: 1.7rem;
+  font-size: 2rem;
   line-height: 1;
   cursor: pointer;
   z-index: 2;
   transition: background-color 0.2s ease, transform 0.2s ease;
   margin: 0;
 }
-
 .nav-menu__close-overlay:hover {
   background-color: transparent;
-  transform: translate(0, -50%) scale(1.1);
+  transform: scale(1.1);
 }
-
 .nav-menu ul {
   list-style: none;
   display: flex;
@@ -191,7 +170,6 @@ img {
   padding: 2rem;
   margin-top: 0;
 }
-
 .nav-menu a {
   display: flex;
   align-items: center;
@@ -203,19 +181,16 @@ img {
   transition: all 0.3s ease;
   position: relative;
 }
-
 .nav-menu a i {
   width: 24px;
   text-align: center;
 }
-
 .nav-menu a:hover,
 .nav-menu a:focus {
   background-color: rgba(238, 50, 49, 0.1);
   color: var(--primary-color);
   outline: none;
 }
-
 .nav-menu a::before {
   content: "";
   position: absolute;
@@ -228,12 +203,10 @@ img {
   transform-origin: top;
   transition: transform 0.3s ease;
 }
-
 .nav-menu a:hover::before,
 .nav-menu a:focus::before {
   transform: scaleY(1);
 }
-
 .btn {
   display: inline-block;
   background: var(--primary-color);
@@ -249,7 +222,6 @@ img {
   user-select: none;
   text-align: center;
 }
-
 .btn:hover,
 .btn:focus {
   background-color: #cc292a;
@@ -257,27 +229,23 @@ img {
   box-shadow: 0 4px 10px rgba(238, 50, 49, 0.3);
   outline: none;
 }
-
 .btn--stroke {
   background: transparent;
   border: 2px solid var(--primary-color);
   color: var(--primary-color);
 }
-
 .btn--ghost {
   background: transparent;
   border: none;
   color: var(--primary-color);
   padding: 1rem;
 }
-
 h1,
 .h1 {
   font-size: var(--h1-size);
   font-weight: 700;
   line-height: 1.1;
 }
-
 h2,
 .h2 {
   font-size: var(--h2-size);
@@ -285,42 +253,34 @@ h2,
   text-align: center;
   margin-bottom: 1.5rem;
 }
-
 h3,
 .h3 {
   font-size: var(--h3-size);
   font-weight: 500;
   text-align: center;
 }
-
 p {
   font-size: 0.875rem;
   line-height: 1em;
   margin-bottom: 0.5em;
 }
-
 .title--thin {
   font-weight: 200;
   font-style: italic;
   display: block;
 }
-
 main *::-webkit-scrollbar {
   height: 0.25rem;
 }
-
 main *::-webkit-scrollbar-track {
   background: transparent;
 }
-
 main *::-webkit-scrollbar-thumb {
   background-color: var(--primary-color);
 }
-
 section {
   padding: 0.5em;
 }
-
 .hero {
   text-align: center;
   display: flex;
@@ -330,7 +290,6 @@ section {
   padding-top: 0.1em;
   padding-bottom: 0.1em;
 }
-
 .hero__title--upper {
   text-transform: uppercase;
   margin-top: 1px;
@@ -339,23 +298,19 @@ section {
   text-shadow: 2px 1px #fff, -0.2px -1px #fff, -1px 2px #fff, 1px -2px #fff;
   letter-spacing: 1px;
 }
-
 .courses__title {
   text-align: center;
   margin-bottom: 2rem;
 }
-
 .courses__list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
 }
-
 .courses__card {
   flex-basis: 350px;
 }
-
 .courses__card__ctas {
   display: flex;
   flex-wrap: wrap;
@@ -363,20 +318,17 @@ section {
   gap: 1rem;
   margin-top: 1.5rem;
 }
-
 .testimonials__carousel {
   position: relative;
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
 }
-
 .testimonials__carousel__wrapper {
   display: flex;
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
-
 .testimonial-item {
   flex: 0 0 100%;
   padding: 4em;
@@ -384,14 +336,12 @@ section {
   text-align: center;
   color: var(--text-color);
 }
-
 .testimonial-item img {
   max-width: 120px;
   border-radius: 50%;
   margin: 0 auto 1rem;
   border: 3px solid var(--primary-color);
 }
-
 .carousel__btn {
   position: absolute;
   top: 50%;
@@ -405,22 +355,18 @@ section {
   border-radius: 50%;
   z-index: 10;
 }
-
 .carousel__btn--prev {
   left: 0.5rem;
 }
-
 .carousel__btn--next {
   right: 0.5rem;
 }
-
 .carousel-indicators {
   display: flex;
   justify-content: center;
   margin-top: 1rem;
   gap: 10px;
 }
-
 .carousel-indicators button {
   width: 12px;
   height: 12px;
@@ -429,22 +375,18 @@ section {
   border: none;
   cursor: pointer;
 }
-
 .carousel-indicators button[aria-selected="true"] {
   background: var(--primary-color);
 }
-
 .books__card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .books__card__img {
   max-width: 250px;
   margin-bottom: 1.5rem;
 }
-
 .books__card__ctas {
   display: flex;
   flex-direction: column;
@@ -453,19 +395,16 @@ section {
   margin-top: 1.5rem;
   width: 100%;
 }
-
 .books__card__ctas-group {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
 }
-
 .btn--full-width {
   width: 100%;
   max-width: 320px;
 }
-
 .news {
   display: flex;
   flex-direction: column;
@@ -473,40 +412,33 @@ section {
   text-align: center;
   gap: 1.5rem;
 }
-
 .news__header .h2 {
   margin-bottom: 0.5rem;
 }
-
 .news__disclaimer {
   font-size: 1.125rem;
   font-weight: 300;
   margin: 0;
   color: rgba(255, 255, 255, 0.9);
 }
-
 .news__apps-group {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
 }
-
 .news__icon img {
   width: 64px;
   transition: transform 0.3s ease;
 }
-
 .news__icon:hover img {
   transform: scale(1.1);
 }
-
 .footer {
   background: var(--menu-bg);
   padding: 2.5rem 1.5rem;
   margin-top: 2rem;
   box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.7);
 }
-
 .footer__container {
   display: flex;
   flex-direction: column;
@@ -515,30 +447,25 @@ section {
   text-align: center;
   gap: 1.5rem;
 }
-
 .footer__logo {
   width: 5rem;
   text-align: center;
   border-radius: 50%;
   border: 2px solid var(--primary-color);
 }
-
 .footer__socialLinks {
   list-style: none;
   display: flex;
   gap: 1.5rem;
   padding: 0;
 }
-
 .footer__socialLinks a img {
   width: 32px;
   transition: transform 0.3s ease;
 }
-
 .footer__socialLinks a:hover img {
   transform: scale(1.1);
 }
-
 .footer__copyright {
   text-align: center;
   margin-top: 2rem;
@@ -547,7 +474,6 @@ section {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.7);
 }
-
 @media (min-width: 1024px) {
   :root {
     --h1-size: 3.25rem;

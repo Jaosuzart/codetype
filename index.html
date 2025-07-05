@@ -28,6 +28,9 @@
             </button>
             <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Menu principal">
                 <div class="nav-menu__header">
+                    <button class="nav-menu__close-overlay" id="close-menu" aria-label="Fechar menu">
+                        <i class="fas fa-times"></i>
+                    </button>
                     <div class="nav-menu__logo-container">
                         <img src="images/programador.jpg" alt="Codetype Logotipo" class="nav-menu__logo" />
                     </div>
@@ -196,6 +199,7 @@
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
         const menuOverlay = document.getElementById('menu-overlay');
+        const closeMenuBtn = document.getElementById('close-menu');
 
         function openMenu() {
             menuToggle.classList.add('active');
@@ -213,6 +217,7 @@
 
         menuToggle.addEventListener('click', openMenu);
         menuOverlay.addEventListener('click', closeMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
 
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {

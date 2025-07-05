@@ -110,25 +110,6 @@ img {
 .mobile-menu-toggle.active .hamburger-line:last-child {
   transform: translateY(-0.55rem) rotate(-45deg);
 }
-
-.menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity var(--transition-speed) ease;
-  pointer-events: none;
-}
-.menu-overlay.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-
 .nav-menu {
   position: fixed;
   top: 0;
@@ -153,7 +134,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 2rem 1rem 2rem;
+  padding: 2em 2em 2em 1em 2em;
   background: transparent;
   position: relative;
 }
@@ -175,7 +156,6 @@ img {
   border-radius: 50%;
 }
 
-/* Botão de fechar SEM círculo */
 .nav-menu__close-overlay {
   position: absolute;
   top: 50%;

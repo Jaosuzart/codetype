@@ -344,13 +344,20 @@ section {
   transition: transform 0.5s ease-in-out;
   will-change: transform;
 }
+
 .testimonial-item {
   flex: 0 0 100%;
-  padding: 4em;
+  padding: 2rem 4rem;
   box-sizing: border-box;
   text-align: center;
   color: var(--text-color);
 }
+@media (max-width: 767px) {
+  .testimonial-item {
+    padding: 2em 3rem 12rem;
+  }
+}
+
 .testimonial-item img {
   max-width: 120px;
   border-radius: 50%;
@@ -365,7 +372,7 @@ section {
   border: none;
   color: #fff;
   font-size: 2rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.75rem 1rem; /* Aumentado para área clicável maior */
   cursor: pointer;
   border-radius: 50%;
   z-index: 10;
@@ -389,6 +396,7 @@ section {
   background: rgba(255, 255, 255, 0.3);
   border: none;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 .carousel-indicators button[aria-selected="true"] {
   background: var(--primary-color);
@@ -489,6 +497,7 @@ section {
   font-size: 0.875rem;
   color: rgba(255, 255, 255, 0.7);
 }
+
 @media (min-width: 1024px) {
   :root {
     --h1-size: 3.25rem;

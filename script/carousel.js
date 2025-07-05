@@ -1,5 +1,45 @@
+// --- SCRIPT DO MENU MOBILE (Existente) ---
+const menuToggle = document.getElementById("menu-toggle");
+const navMenu = document.getElementById("nav-menu");
+const menuOverlay = document.getElementById("menu-overlay");
+const closeMenuBtn = document.getElementById("close-menu");
+
+function openMenu() {
+  menuToggle.classList.add("active");
+  navMenu.classList.add("active");
+  menuOverlay.classList.add("active");
+  menuToggle.setAttribute("aria-expanded", "true");
+}
+
+function closeMenu() {
+  menuToggle.classList.remove("active");
+  navMenu.classList.remove("active");
+  menuOverlay.classList.remove("active");
+  menuToggle.setAttribute("aria-expanded", "false");
+}
+
+menuToggle.addEventListener("click", openMenu);
+menuOverlay.addEventListener("click", closeMenu);
+closeMenuBtn.addEventListener("click", closeMenu);
+
+document.querySelectorAll(".nav-menu a").forEach((link) => {
+  link.addEventListener("click", () => {
+    if (window.innerWidth < 1024) {
+      closeMenu();
+    }
+  });
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1024) {
+    closeMenu();
+  }
+});
+
 document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.getElementById("testimonial-carousel");
+  if (!carousel) return;
+
   const wrapper = carousel.querySelector("[data-carousel-wrapper]");
   const items = carousel.querySelectorAll("[data-carousel-item]");
   const btnPrev = carousel.querySelector(".carousel__btn--prev");
@@ -12,13 +52,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const autoPlayDelay = 5000;
 
   function showSlide(index) {
-    if (index < 0) index = totalItems - 1;
-    if (index >= totalItems) index = 0;
+    if (index < 0) {
+      index = totalItems - 1;
+    }
+    if (index >= totalItems) {
+      index = 0;
+    }
 
-    // Move wrapper
     wrapper.style.transform = `translateX(-${index * 100}%)`;
 
-    // Atualiza indicador aria
     indicators.forEach((btn, i) => {
       const selected = i === index;
       btn.setAttribute("aria-selected", selected);
@@ -26,6 +68,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     currentIndex = index;
+  }
+
+  function startAutoplay() {
+    if (intervalId) clearInterval(intervalId);
+
+    intervalId = setInterval(() => {
+      showSlide(currentIndex + 1);
+    }, autoPlayDelay);
+  }
+
+  function resetAutoplay() {
+    clearInterval(intervalId);
+    startAutoplay();
   }
 
   btnPrev.addEventListener("click", () => {
@@ -45,30 +100,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Navegação via teclado
   carousel.addEventListener("keydown", (e) => {
     if (e.key === "ArrowLeft") {
+      e.preventDefault();
       btnPrev.click();
     } else if (e.key === "ArrowRight") {
+      e.preventDefault();
       btnNext.click();
     }
   });
 
-  // Autoplay
-  function startAutoplay() {
-    intervalId = setInterval(() => {
-      showSlide(currentIndex + 1);
-    }, autoPlayDelay);
-  }
-
-  function resetAutoplay() {
-    if (intervalId) {
-      clearInterval(intervalId);
-    }
-    startAutoplay();
-  }
-
-  // Pausa autoplay ao passar mouse
   carousel.addEventListener("mouseenter", () => {
     clearInterval(intervalId);
   });
@@ -77,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoplay();
   });
 
-  // Inicializa
   showSlide(0);
   startAutoplay();
 });

@@ -110,17 +110,17 @@
                     <article class="testimonial-item" data-carousel-item>
                         <img src="images/depoimentos-curso-matheus-fraga-fabrica-de-apps.png"
                             alt="Depoimento 01 - Curso bastante didático" />
-                        <blockquote>"Curso extremamente didático"-Matheus Fraga </blockquote>
+                        <blockquote>"Curso extremamente didático" - Matheus Fraga</blockquote>
                     </article>
                     <article class="testimonial-item" data-carousel-item>
                         <img src="images/depoimentos.jpeg"
                             alt="Depoimento 02 - Simplesmente o melhor curso de fundamentos" />
-                        <blockquote>"Simplesmente o melhor curso de fundamentos"-Ana Silva </blockquote>
+                        <blockquote>"Simplesmente melhor curso com o melhor suporte" - Ana</blockquote>
                     </article>
                     <article class="testimonial-item" data-carousel-item>
                         <img src="images/depoimentos-curso-matheus-fraga-fabrica-de-apps.png"
                             alt="Depoimento 03 - Aprendi muito rápido" />
-                        <blockquote>"Aprendi muito rápido"-Ana Silva</blockquote>
+                        <blockquote>"Melhor didática e melhor ensino do Brasil com carisma" - Ana Carolina</blockquote>
                     </article>
                 </div>
                 <button class="carousel__btn carousel__btn--next" aria-label="Próximo depoimento">&#10095;</button>
@@ -197,6 +197,7 @@
         </div>
     </footer>
     <script>
+        /* --- SCRIPT DO MENU MOBILE --- */
         const menuToggle = document.getElementById('menu-toggle');
         const navMenu = document.getElementById('nav-menu');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -231,6 +232,52 @@
         window.addEventListener('resize', () => {
             if (window.innerWidth >= 1024) {
                 closeMenu();
+            }
+        });
+
+        /* --- NOVO SCRIPT PARA O CARROSSEL DE DEPOIMENTOS --- */
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('#testimonial-carousel');
+            if (carousel) {
+                const wrapper = carousel.querySelector('.testimonials__carousel__wrapper');
+                const items = carousel.querySelectorAll('.testimonial-item');
+                const prevBtn = carousel.querySelector('.carousel__btn--prev');
+                const nextBtn = carousel.querySelector('.carousel__btn--next');
+                const indicators = carousel.querySelectorAll('.carousel-indicators button');
+                if (!wrapper || items.length === 0) return;
+                let currentIndex = 0;
+                const totalItems = items.length;
+                function updateCarousel() {
+                    wrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+                    indicators.forEach((indicator, index) => {
+                        if (index === currentIndex) {
+                            indicator.setAttribute('aria-selected', 'true');
+                            indicator.setAttribute('tabindex', '0');
+                        } else {
+                            indicator.setAttribute('aria-selected', 'false');
+                            indicator.setAttribute('tabindex', '-1');
+                        }
+                    });
+                }
+
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % totalItems;
+                    updateCarousel();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                    updateCarousel();
+                });
+
+                indicators.forEach((indicator, index) => {
+                    indicator.addEventListener('click', () => {
+                        currentIndex = index;
+                        updateCarousel();
+                    });
+                });
+
+                updateCarousel();
             }
         });
     </script>

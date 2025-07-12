@@ -268,7 +268,8 @@ section {
   text-align: center;
   padding-top: 3rem;
   padding-bottom: 3rem;
-  margin-top: 0;
+  margin-top: 40em;
+  min-height: 50vh;
 }
 
 .hero__title--upper {
@@ -280,7 +281,6 @@ section {
   font-weight: 700;
 }
 
-/* Cursos */
 .courses__list {
   display: flex;
   flex-wrap: wrap;

@@ -401,7 +401,7 @@ section {
 }
 
 .testimonials__carousel__wrapper {
-  isplay: flex;
+  display: flex;
   gap: 2.5rem;
   padding: 0 2.5rem;
   animation: scrollLoop 30s linear infinite;

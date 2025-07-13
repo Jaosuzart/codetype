@@ -57,21 +57,21 @@
     <main>
         <section class="hero" id="home">
             <div class="container">
-                <h1 class="hero__title">
+                <h1 class="hero__title reveal">
                     O Melhor Lugar para iniciar sua jornada na
                     <span class="hero__title--upper">PROGRAMAÇÃO FRONT-END E BACK-END</span>
                 </h1>
-                <a href="#courses" class="btn hero__cta">Conheça nossos cursos</a>
+                <a href="#courses" class="btn hero__cta reveal reveal--delay-1">Conheça nossos cursos</a>
             </div>
         </section>
 
         <section class="courses" id="courses">
             <div class="container">
                 <header class="courses__header">
-                    <h2 class="h2">Os Melhores Cursos <span class="title--thin">Você Encontra Aqui</span></h2>
+                    <h2 class="h2 reveal">Os Melhores Cursos <span class="title--thin reveal reveal--delay-1">Você Encontra Aqui</span></h2>
                 </header>
                 <div class="courses__list">
-                    <article class="courses__card">
+                    <article class="courses__card reveal reveal--delay-1">
                         <div class="courses__card__content">
                             <img src="images/node.png" alt="Logo Node.js" width="180" height="180" loading="lazy">
                             <h3 class="h3">Curso de Node <span class="title--thin"></span></h3>
@@ -85,7 +85,7 @@
                                 Comprar</a>
                         </div>
                     </article>
-                    <article class="courses__card">
+                    <article class="courses__card reveal reveal--delay-2">
                         <div class="courses__card__content">
                             <img src="images/php.jpeg" alt="Logo PHP" width="180" height="180" loading="lazy">
                             <h3 class="h3">Curso de PHP <span class="title--thin">Do básico ao avançado</span></h3>
@@ -99,7 +99,7 @@
                                 Comprar</a>
                         </div>
                     </article>
-                    <article class="courses__card">
+                    <article class="courses__card reveal reveal--delay-3">
                         <div class="courses__card__content">
                             <img src="images/c.jpeg" alt="Logo C" width="180" height="180" loading="lazy">
                             <h3 class="h3">Curso de C <span class="title--thin">Do básico ao avançado</span></h3>
@@ -119,9 +119,9 @@
 
         <section class="testimonials" id="testimonials" aria-label="Depoimentos">
             <div class="container">
-                <h2 class="h2">Alguns Depoimentos <span class="title--thin">O que andam falando da gente por aí</span>
+                <h2 class="h2 reveal">Alguns Depoimentos <span class="title--thin reveal reveal--delay-1">O que andam falando da gente por aí</span>
                 </h2>
-                <div class="testimonials__carousel">
+                <div class="testimonials__carousel reveal reveal--delay-2">
                     <div class="testimonials__carousel__wrapper">
                         <article class="testimonial-item">
                             <img src="images/depoimentos-curso-matheus-fraga-fabrica-de-apps.png"
@@ -172,10 +172,10 @@
         </section>
         <section class="books" id="ebooks">
             <div class="container">
-                <h2 class="h2">E-book da Serliv <span class="title--secondary">Livro digital para você se especializar
+                <h2 class="h2 reveal">E-book da Serliv <span class="title--secondary reveal reveal--delay-1">Livro digital para você se especializar
                         ainda mais</span></h2>
                 <div class="books__list">
-                    <article class="books__card">
+                    <article class="books__card reveal reveal--scale">
                         <img src="images/melhorias-js (1).png" alt="Capa do e-book Melhores Práticas Javascript"
                             width="200" height="280" loading="lazy">
                         <div class="books__card__info">
@@ -204,7 +204,7 @@
         </section>
         <section class="news" id="channels">
             <div class="container news__container">
-                <div class="news__card">
+                <div class="news__card reveal reveal--delay-1">
                     <header class="news__header">
                         <h2 class="h2">Não perca as Novidades <span class="title--thin">Atualizações</span></h2>
                         <p class="news__disclaimer">Escolha seu app preferido</p>
@@ -221,7 +221,7 @@
                         <a href="#" class="btn">Saiba mais</a>
                     </div>
                 </div>
-                <div class="news__card">
+                <div class="news__card reveal reveal--delay-2">
                     <header class="news__header">
                         <h2 class="h2">Não perca as Novidades <span class="title--thin">Promoções</span></h2>
                         <p class="news__disclaimer">Fique por dentro das ofertas</p>
@@ -238,7 +238,7 @@
                         <a href="#" class="btn">Saiba mais</a>
                     </div>
                 </div>
-                <div class="news__card">
+                <div class="news__card reveal reveal--delay-3">
                     <header class="news__header">
                         <h2 class="h2">Não perca as Novidades <span class="title--thin">Vídeos Novos</span></h2>
                         <p class="news__disclaimer">Veja os lançamentos em primeira mão</p>
@@ -349,6 +349,41 @@
                     }
                 });
             });
+
+            // Scroll Reveal with Intersection Observer
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            // Observe all elements with reveal classes
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach(el => observer.observe(el));
+
+            // Optional: Re-trigger animations when elements come back into view
+            const reObserverOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const reObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        entry.target.classList.remove('active');
+                    }
+                });
+            }, reObserverOptions);
+
+            // Uncomment the line below if you want elements to re-animate when scrolling back up
+            // revealElements.forEach(el => reObserver.observe(el));
         });
     </script>
 </body>

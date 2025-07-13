@@ -55,20 +55,73 @@ body {
   }
 }
 
+/* Scroll Reveal Animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal--left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal--left.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal--right.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal--scale {
+  opacity: 0;
+  transform: scale(0.8);
+  transition: all 0.8s ease-out;
+}
+
+.reveal--scale.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.reveal--delay-1 {
+  transition-delay: 0.1s;
+}
+
+.reveal--delay-2 {
+  transition-delay: 0.2s;
+}
+
+.reveal--delay-3 {
+  transition-delay: 0.3s;
+}
+
+.reveal--delay-4 {
+  transition-delay: 0.4s;
+}
+
+.reveal--delay-5 {
+  transition-delay: 0.5s;
+}
+
 .hero {
   animation: fadeInUp 0.8s ease-out;
-}
-.courses__card {
-  animation: cardEntrance 0.6s ease-out both;
-}
-.courses__card:nth-child(1) {
-  animation-delay: 0.1s;
-}
-.courses__card:nth-child(2) {
-  animation-delay: 0.2s;
-}
-.courses__card:nth-child(3) {
-  animation-delay: 0.3s;
 }
 
 a {
@@ -238,7 +291,7 @@ h3 {
 
 .title--thin {
   font-weight: 300;
-  ont-style: italic;
+  font-style: italic;
   display: block;
   color: rgba(var(--text-color-rgb), 0.7);
   text-align: center;

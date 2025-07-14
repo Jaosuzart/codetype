@@ -308,16 +308,16 @@ h3 {
 
 /* Seções */
 section {
-  padding-block: 3rem;
-  margin-block: 1rem;
+  padding-block: 2.5rem; /* Ajustado para 2.5rem */
+  margin-block: 0.5rem; /* Ajustado para 0.5rem */
 }
 
 .hero {
   text-align: center;
-  padding-top: 5rem;
-  padding-bottom: 0.75rem;
+  padding-top: 1.2rem;
+  padding-bottom: 0.5rem;
   margin-top: 0;
-  min-height: 50vh;
+  min-height: 20vh;
 }
 
 .hero__title--upper {
@@ -358,7 +358,6 @@ section {
   max-width: 380px;
   min-width: 280px;
 }
-
 .courses__card:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-8px) scale(1.02);
@@ -464,9 +463,7 @@ section {
   gap: 0.75rem;
   width: 100%;
   margin-top: 1rem;
-}
-
-/* Novidades (News) */
+} /* Novidades (News) */
 .news__header {
   text-align: center;
   width: 100%;
@@ -791,7 +788,7 @@ section {
 /* Responsividade para os cards de novidades */
 @media (max-width: 768px) {
   .news__card {
-    padding: 1.5rem 1rem;
+    padding: 0.9rem 0.8rem;
   }
 
   .news__card__title {
@@ -801,6 +798,16 @@ section {
   .news__apps-group {
     flex-direction: column;
     align-items: center;
+  }
+
+  section {
+    padding-block: 1rem;
+    margin-block: 0rem;
+  }
+
+  .hero {
+    min-height: auto;
+    padding-block: 1rem;
   }
 }
 

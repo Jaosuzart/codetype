@@ -316,33 +316,48 @@ section {
 }
 
 /* Depoimentos */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-350px * 3));  /* Ajuste baseado no número de depoimentos */
+  }
+}
+
 .testimonials__carousel {
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
-  scrollbar-color: var(--primary-color) var(--page-bg);
+  overflow: hidden;
+  position: relative;
   padding-bottom: 1rem;
+  width: 100%;
 }
 
-.testimonials__carousel::-webkit-scrollbar {
-  height: 8px;
+.testimonials__carousel::before,
+.testimonials__carousel::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  width: 50px;
+  height: 100%;
+  pointer-events: none;
 }
 
-.testimonials__carousel::-webkit-scrollbar-track {
-  background: var(--page-bg);
-  border-radius: 4px;
+.testimonials__carousel::before {
+  left: 0;
+  background: linear-gradient(to right, var(--page-bg), transparent);
 }
 
-.testimonials__carousel::-webkit-scrollbar-thumb {
-  background-color: var(--primary-color);
-  border-radius: 4px;
+.testimonials__carousel::after {
+  right: 0;
+  background: linear-gradient(to left, var(--page-bg), transparent);
 }
 
 .testimonials__carousel__wrapper {
   display: flex;
   gap: 1.5rem;
   padding: 0 1.5rem;
+  animation: scroll 30s linear infinite;
+  width: fit-content;
 }
 
 .testimonial-item {
@@ -350,9 +365,15 @@ section {
   border-radius: 1rem;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
   padding: 2rem 1.5rem;
-  flex: 0 0 80%;
-  max-width: 350px;
-  scroll-snap-align: start;
+  flex: 0 0 350px;
+  width: 350px;
+  min-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 /* E-books */
@@ -455,10 +476,11 @@ section {
 
 .news__apps-group {
   display: flex;
-  justify-content: center;
-  gap: 1.5rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
   margin-bottom: 1rem;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .news__saiba-mais-wrap {
@@ -707,11 +729,11 @@ section {
   .news__card {
     padding: 1.5rem 1rem;
   }
-  
+
   .news__card__title {
     font-size: 1.3rem;
   }
-  
+
   .news__apps-group {
     flex-direction: column;
     align-items: center;

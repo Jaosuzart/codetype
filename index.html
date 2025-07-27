@@ -35,8 +35,8 @@
 
             <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="Menu principal">
                 <div class="nav-menu__header">
-                    <img src="images/programador.jpeg" alt="codetype logotipo" width="140" height="145"> <button
-                        class="nav-menu__close" id="close-menu" aria-label="Fechar menu">
+                    <img src="images/programador.jpeg" alt="codetype logotipo" width="140" height="145">
+                    <button class="nav-menu__close" id="close-menu" aria-label="Fechar menu">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
@@ -83,8 +83,7 @@
                             <a href="#" class="btn"><i class="fas fa-eye"></i> Ver Conteúdo</a>
                             <a href="#" class="btn"
                                 onclick="alert('Esta página está em manutenção. Por favor, volte mais tarde.'); return false;"><i
-                                    class="fas fa-shopping-cart"></i> Quero
-                                Comprar</a>
+                                    class="fas fa-shopping-cart"></i> Quero Comprar</a>
                         </div>
                     </article>
                     <article class="courses__card reveal reveal--delay-2">
@@ -98,8 +97,7 @@
                             <a href="#" class="btn"><i class="fas fa-eye"></i> Ver Conteúdo</a>
                             <a href="#" class="btn"
                                 onclick="alert('Esta página está em manutenção, por favor, aguarde.'); return false;"><i
-                                    class="fas fa-shopping-cart"></i> Quero
-                                Comprar</a>
+                                    class="fas fa-shopping-cart"></i> Quero Comprar</a>
                         </div>
                     </article>
                     <article class="courses__card reveal reveal--delay-3">
@@ -113,8 +111,7 @@
                             <a href="#" class="btn"><i class="fas fa-eye"></i> Ver Conteúdo</a>
                             <a href="#" class="btn"
                                 onclick="alert('Esta página está em manutenção. Por favor, volte mais tarde.'); return false;"><i
-                                    class="fas fa-shopping-cart"></i> Quero
-                                Comprar</a>
+                                    class="fas fa-shopping-cart"></i> Quero Comprar</a>
                         </div>
                     </article>
                 </div>
@@ -124,8 +121,7 @@
         <section class="testimonials" id="testimonials" aria-label="Depoimentos">
             <div class="container">
                 <h2 class="h2 reveal">Alguns Depoimentos <span class="title--thin reveal reveal--delay-1">O que andam
-                        falando da gente por aí</span>
-                </h2>
+                        falando da gente por aí</span></h2>
                 <div class="testimonials__carousel reveal reveal--delay-2">
                     <div class="testimonials__carousel__wrapper" id="testimonial-carousel">
                         <article class="testimonial-item"> <img src="images/depoimentos.png" alt="Foto de Matheus Fraga"
@@ -153,18 +149,18 @@
                 </div>
             </div>
         </section>
+
         <section class="books" id="ebooks">
             <div class="container">
                 <h2 class="h2 reveal">E-book da Serliv <span class="title--secondary reveal reveal--delay-1">Livro
-                        digital para você se especializar
-                        ainda mais</span></h2>
+                        digital para você se especializar ainda mais</span></h2>
                 <div class="books__list">
                     <article class="books__card reveal reveal--scale">
                         <img src="images/melhorias-js.png" alt="Capa do e-book Melhores Práticas Javascript" width="200"
                             height="280" loading="lazy">
                         <div class="books__card__info">
-                            <h3 class="h3">Melhores Práticas Javascript <span class="title--thin">O guia
-                                    essencial para excelência em TI</span></h3>
+                            <h3 class="h3">Melhores Práticas Javascript <span class="title--thin">O guia essencial para
+                                    excelência em TI</span></h3>
                             <p class="books__card__price">R$ 22,90</p>
                             <p>Eleve seu código para outro patamar. Aprenda com exemplos práticos as vantagens de
                                 aplicar as melhores práticas de programação com JavaScript.</p>
@@ -186,6 +182,7 @@
                 </div>
             </div>
         </section>
+
         <section class="news" id="channels">
             <div class="container news__container">
                 <div class="news__card reveal reveal--delay-1">
@@ -206,8 +203,7 @@
                 </div>
                 <div class="news__card reveal reveal--delay-2">
                     <header class="news__header">
-                        <h2 class="h2">Não perca os lançamentos das <span class="title--thin">Promoções</span>
-                        </h2>
+                        <h2 class="h2">Não perca os lançamentos das <span class="title--thin">Promoções</span></h2>
                         <p class="news__disclaimer">Fique por dentro das ofertas</p>
                     </header>
                     <div class="news__apps-group">
@@ -239,6 +235,7 @@
                         <a href="#" class="btn">Saiba mais</a>
                     </div>
                 </div>
+            </div>
         </section>
     </main>
 
@@ -331,7 +328,6 @@
                 });
             });
 
-            // Scroll Reveal with Intersection Observer
             const observerOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -50px 0px'
@@ -345,11 +341,9 @@
                 });
             }, observerOptions);
 
-            // Observe all elements with reveal classes
             const revealElements = document.querySelectorAll('.reveal');
             revealElements.forEach(el => observer.observe(el));
 
-            // Optional: Re-trigger animations when elements come back into view
             const reObserverOptions = {
                 threshold: 0.1,
                 rootMargin: '0px 0px -100px 0px'
@@ -362,7 +356,6 @@
                     }
                 });
             }, reObserverOptions);
-
         });
     </script>
 </body>

@@ -1,6 +1,7 @@
 CodeType - Projeto Final Serliv
 **Foto do site: ![1752341148055](https://github.com/user-attachments/assets/8a981d23-d2d6-4a8d-b7dc-699fa565eeaf)
 **
+
 Visão Geral
 CodeType é uma aplicação web desenvolvida como projeto final do curso Serliv. Construída com HTML, CSS e JavaScript, esta aplicação tem como objetivo [insira o propósito do projeto, por exemplo, "fornecer uma plataforma interativa para usuários praticarem a digitação de trechos de código, melhorando sua velocidade e precisão"]. Ela demonstra a aplicação prática de habilidades de desenvolvimento web adquiridas durante o curso.
 Tecnologias Utilizadas

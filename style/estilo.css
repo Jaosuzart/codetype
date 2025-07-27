@@ -472,11 +472,59 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
 .news__card:hover {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
   transform: translateY(-4px);
+}
+
+@media screen and (min-width: 360px) and (max-width: 740px) {
+  .news__card {
+    padding: 1.5rem 1rem;
+  }
+
+  .news__card .news__header {
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  .news__disclaimer {
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0 1rem;
+    line-height: 1.4;
+  }
+
+  .news__apps-group {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-direction: row;
+  }
+
+  .news__saiba-mais-wrap {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .news__saiba-mais-wrap .btn {
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .news__card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .news__card .title--thin {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .news__card__header {

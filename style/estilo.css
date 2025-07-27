@@ -212,6 +212,7 @@ h3 {
   line-height: 1.3;
   margin-bottom: 1rem;
   text-align: center;
+  text-transform: capitalize;
 }
 
 h1 {
@@ -251,13 +252,13 @@ section {
 
 .hero {
   text-align: center;
-  padding-top: 3rem;
+  padding-top: 4rem;
   padding-bottom: 2rem;
   margin-top: 0;
 }
 
 .hero__title--upper {
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin: 0.5rem 0;
   display: block;
   color: var(--primary-color);
@@ -468,9 +469,13 @@ section {
   transform: translateY(-4px);
 }
 
+.news .title--thin {
+  color: var(--primary-color);
+}
+
 @media screen and (max-width: 767px) {
   .news__card {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
   }
 
   .news__card .news__header {
@@ -837,7 +842,6 @@ section {
   }
 }
 
-/* Desktop */
 @media (min-width: 1200px) {
   :root {
     --h1-size: 2.75rem;
@@ -898,10 +902,9 @@ section {
   }
 }
 
-/* Responsividade para os cards de novidades */
 @media (max-width: 768px) {
   .news__card {
-    padding: 1.5rem 1rem;
+    padding: 1rem;
   }
 
   .news__card__title {
